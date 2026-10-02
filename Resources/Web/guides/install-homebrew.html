@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install Homebrew</title>
+<link rel="stylesheet" href="shared.css">
+
+<main>
+  <p class="kicker">Step 3 of 5</p>
+  <h1>Install Homebrew</h1>
+  <p class="lede">Two pastes: the <a href="https://brew.sh">brew.sh</a> installer, then one that puts <code>brew</code> on your PATH.</p>
+  <ul class="facts"><li class="need">needs step 1</li><li class="need">asks for your password</li><li>Apple silicon: /opt/homebrew</li></ul>
+  <section class="step">
+    <h2><span class="n">1</span>Run the installer</h2>
+    <p>It asks for your password, lists what it will do, and waits for Return before downloading.</p>
+    <div class="panel">
+      <div class="bar"><span class="name">install</span><span class="meta">1 line</span><span class="spacer"></span><button class="btn primary" type="button" data-copy="install"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copy</span></button></div>
+      <pre class="one"><code id="install" data-lang="bash"><span class="l">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span></code></pre>
+    </div>
+  </section>
+  <section class="step">
+    <h2><span class="n">2</span>Put brew on your PATH</h2>
+    <p>The same lines the installer prints under "Next steps". They add <code>shellenv</code> to <code>~/.zprofile</code> and load it in this window.</p>
+    <div class="panel">
+      <div class="bar"><span class="name">shellenv</span><span class="meta">4 lines</span><span class="spacer"></span><button class="btn primary" type="button" data-copy="path"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copy</span></button></div>
+      <pre class="one"><code id="path" data-lang="bash"><span class="l">echo &gt;&gt; "$HOME/.zprofile"</span><span class="l">echo 'eval "$(/opt/homebrew/bin/brew shellenv zsh)"' &gt;&gt; "$HOME/.zprofile"</span><span class="l">eval "$(/opt/homebrew/bin/brew shellenv zsh)"</span><span class="l">source ~/.zshrc</span></code></pre>
+    </div>
+  </section>
+  <section class="step">
+    <h2><span class="n">3</span>Check it</h2>
+    <ul class="plain">
+      <li><code>which brew</code> prints <code>/opt/homebrew/bin/brew</code>.</li>
+      <li><code>brew doctor</code> lists anything wrong with the install.</li>
+      <li>Pasted step 2 twice? <code>~/.zprofile</code> now has the line twice. Harmless; delete one if you like.</li>
+    </ul>
+  </section>
+  <footer>Source: <a href="https://brew.sh">brew.sh</a>. An Intel Mac installs to <code>/usr/local</code>, which is already on the PATH, so skip step 2 there.</footer>
+</main>
+
+<script src="shared.js"></script>
+
+<style>main{margin-left:0;max-width:100%;padding:24px} .finish{display:none}</style></html>

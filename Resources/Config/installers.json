@@ -1,0 +1,86 @@
+[
+  {
+    "id": "deno",
+    "name": "Deno",
+    "command": "curl -fsSL https://deno.land/install.sh | sh",
+    "optional": false,
+    "guide": "install-cli-tools.html"
+  },
+  {
+    "id": "uv",
+    "name": "uv",
+    "command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+    "optional": false,
+    "guide": "install-cli-tools.html"
+  },
+  {
+    "id": "atuin",
+    "name": "Atuin",
+    "command": "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh",
+    "optional": false,
+    "guide": "install-cli-tools.html"
+  },
+  {
+    "id": "claude",
+    "name": "Claude Code",
+    "command": "curl -fsSL https://claude.ai/install.sh | bash",
+    "optional": false,
+    "guide": "install-cli-tools.html"
+  },
+  {
+    "id": "codex",
+    "name": "Codex CLI",
+    "command": "curl -fsSL https://chatgpt.com/codex/install.sh | sh",
+    "optional": false,
+    "guide": "install-cli-tools.html"
+  },
+  {
+    "id": "node",
+    "name": "Node.js through nvm",
+    "command": "# Download and install nvm:\ncurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash\n\n# in lieu of restarting the shell\n\\. \"$HOME/.nvm/nvm.sh\"\n\n# Download and install Node.js:\nnvm install 26",
+    "optional": false,
+    "guide": "install-cli-tools.html"
+  },
+  {
+    "id": "bun",
+    "name": "Bun",
+    "command": "curl -fsSL https://bun.sh/install | bash",
+    "optional": false,
+    "guide": "install-cli-tools.html"
+  },
+  {
+    "id": "opencode",
+    "name": "OpenCode",
+    "command": "curl -fsSL https://opencode.ai/v2/install | bash",
+    "optional": false,
+    "guide": "install-cli-tools.html"
+  },
+  {
+    "id": "install",
+    "name": "Homebrew",
+    "command": "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nif [[ -x /opt/homebrew/bin/brew ]]; then\n  line='eval \"$(/opt/homebrew/bin/brew shellenv zsh)\"'\nelif [[ -x /usr/local/bin/brew ]]; then\n  line='eval \"$(/usr/local/bin/brew shellenv zsh)\"'\nelse\n  exit 1\nfi\ntouch \"$HOME/.zprofile\"\ngrep -qxF \"$line\" \"$HOME/.zprofile\" || print -r -- \"$line\" >> \"$HOME/.zprofile\"\neval \"$line\"",
+    "optional": false,
+    "guide": "install-homebrew.html"
+  },
+  {
+    "id": "go-install",
+    "name": "Go",
+    "command": "bash -e <<'SH'\n[ \"$(uname -m)\" = arm64 ] || { echo \"Use a native Apple Silicon Terminal for this download.\"; exit 1; }\nwork_dir=$(mktemp -d)\ntrap 'rm -rf \"$work_dir\"' EXIT\ncd \"$work_dir\"\ncurl -fL --retry 3 -o go.pkg https://go.dev/dl/go1.27.1.darwin-arm64.pkg\nprintf '%s  %s\\n' 81aee79ea3bd85f00624c216e9105674fa72626dd0479fc85a632939d6c5986b go.pkg | shasum -a 256 -c -\nsudo /usr/sbin/installer -pkg go.pkg -target /\n/usr/local/go/bin/go version\nSH",
+    "optional": true,
+    "guide": "optional-cli-tools.html"
+  },
+  {
+    "id": "zig-install",
+    "name": "Zig",
+    "command": "bash -e <<'SH'\n[ \"$(uname -m)\" = arm64 ] || { echo \"Use a native Apple Silicon Terminal for this download.\"; exit 1; }\nwork_dir=$(mktemp -d)\ntrap 'rm -rf \"$work_dir\"' EXIT\ncd \"$work_dir\"\ncurl -fL --retry 3 -o zig.tar.xz https://ziglang.org/download/0.16.0/zig-aarch64-macos-0.16.0.tar.xz\nprintf '%s  %s\\n' b23d70deaa879b5c2d486ed3316f7eaa53e84acf6fc9cc747de152450d401489 zig.tar.xz | shasum -a 256 -c -\nmkdir -p \"$HOME/.local/opt\" \"$HOME/.local/bin\"\nif [ ! -e \"$HOME/.local/opt/zig-aarch64-macos-0.16.0\" ]; then\n  tar -xf zig.tar.xz -C \"$HOME/.local/opt\"\nfi\nln -sfn \"$HOME/.local/opt/zig-aarch64-macos-0.16.0/zig\" \"$HOME/.local/bin/zig\"\npath_line='export PATH=\"$HOME/.local/bin:$PATH\"'\ntouch \"$HOME/.zprofile\"\ngrep -qxF \"$path_line\" \"$HOME/.zprofile\" || printf '%s\\n' \"$path_line\" >> \"$HOME/.zprofile\"\nexport PATH=\"$HOME/.local/bin:$PATH\"\nzig version\nSH",
+    "optional": true,
+    "guide": "optional-cli-tools.html"
+  },
+  {
+    "id": "rust-install",
+    "name": "Rust",
+    "command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
+    "optional": true,
+    "guide": "optional-cli-tools.html"
+  }
+]

@@ -1,0 +1,45 @@
+/build/
+.DS_Store
+
+# Deno
+# https://deno.com/
+
+# Cache directory (when using project-local DENO_DIR)
+# https://docs.deno.com/runtime/fundamentals/setup/#deno_dir
+.deno/
+
+# Coverage reports
+# https://docs.deno.com/runtime/reference/cli/coverage/
+coverage/
+*.lcov
+
+# Local state and generated artifacts
+.DS_Store
+.env
+.env.*
+!.env.example
+**/.git/
+.kilo/
+.deno/
+.vt/
+node_modules/
+__pycache__/
+*.pyc
+.build/
+.swiftpm/
+.deps/
+.vendor/
+DerivedData/
+macos/*/build/
+macos/*/dist/
+*.xcuserstate
+*.p12
+*.mobileprovision
+_other/generated/
+_other/scratch/
+_other/imports/s7/runtime/
+_other/imports/s7/data/
+_other/imports/s7/generated/
+_other/imports/s7/scratch/
+_other/imports/s7/backups/
+_other/backups/

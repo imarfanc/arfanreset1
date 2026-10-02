@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install Command Line Tools</title>
+<link rel="stylesheet" href="shared.css">
+
+<main>
+  <p class="kicker">Step 1 of 5</p>
+  <h1>Install Command Line Tools</h1>
+  <p class="lede">Apple's clang, git and make, straight from Software Update. You skip the "install developer tools?" dialog.</p>
+  <ul class="facts"><li class="need">asks for your password</li><li>a few minutes</li><li>safe to rerun</li></ul>
+  <section class="step">
+    <h2><span class="n">1</span>Copy, paste into Terminal, press Return</h2>
+    <p>It runs in its own <code>zsh</code>, so an error ends the script and leaves your window open.</p>
+    <div class="panel">
+      <div class="bar"><span class="name">install-clt.zsh</span><span class="meta">55 lines</span><span class="spacer"></span><button class="btn primary" type="button" data-copy="clt"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copy</span></button></div>
+      <pre class="tall"><code id="clt" data-lang="bash"><span class="l h">zsh &lt;&lt;'ZSH'</span><span class="l"></span><span class="l">set -euo pipefail</span><span class="l"></span><span class="l"># Output helpers, inlined so this runs on a Mac without the repo.</span><span class="l">BOLD=$&#x27;\033[1m&#x27; DIM=$&#x27;\033[2m&#x27; GREEN=$&#x27;\033[32m&#x27; AMBER=$&#x27;\033[33m&#x27; RED=$&#x27;\033[31m&#x27; BLUE=$&#x27;\033[34m&#x27; RESET=$&#x27;\033[0m&#x27;</span><span class="l">heading() { printf &#x27;\n%s%s%s\n&#x27; &quot;$BOLD&quot; &quot;$1&quot; &quot;$RESET&quot;; }</span><span class="l">ok() { printf &#x27;  %s✓%s %s\n&#x27; &quot;$GREEN&quot; &quot;$RESET&quot; &quot;$1&quot;; }</span><span class="l">todo() { printf &#x27;  %s•%s %s\n&#x27; &quot;$AMBER&quot; &quot;$RESET&quot; &quot;$1&quot;; }</span><span class="l">fail() { printf &#x27;  %s✕%s %s\n&#x27; &quot;$RED&quot; &quot;$RESET&quot; &quot;$1&quot;; }</span><span class="l">info() { printf &#x27;  %s%s%s\n&#x27; &quot;$DIM&quot; &quot;$1&quot; &quot;$RESET&quot;; }</span><span class="l">suggest() { printf &#x27;\n  %s%s%s\n&#x27; &quot;$BLUE&quot; &quot;$1&quot; &quot;$RESET&quot;; }</span><span class="l"></span><span class="l"># ── Command Line Tools ──────────────────────────────────────────────────</span><span class="l"></span><span class="l">heading &quot;Command Line Tools&quot;</span><span class="l"></span><span class="l">if xcode-select -p &gt;/dev/null 2&gt;&amp;1; then</span><span class="l">  ok &quot;CLT already installed: $(xcode-select -p)&quot;</span><span class="l">  info &quot;$(clang --version 2&gt;/dev/null | head -1)&quot;</span><span class="l">  info &quot;$(git --version 2&gt;/dev/null)&quot;</span><span class="l">else</span><span class="l">  # Trick the system into listing the CLT package</span><span class="l">  TRIGGER=/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress</span><span class="l">  touch &quot;$TRIGGER&quot;</span><span class="l">  trap &#x27;rm -f &quot;$TRIGGER&quot;&#x27; EXIT</span><span class="l"></span><span class="l">  # Find the newest CLT label</span><span class="l">  CLT=$(softwareupdate -l 2&gt;/dev/null \</span><span class="l">    | grep -o &#x27;Label: Command Line Tools for Xcode.*&#x27; \</span><span class="l">    | sed &#x27;s/^Label: //&#x27; \</span><span class="l">    | sort -V | tail -1)</span><span class="l"></span><span class="l">  if [[ -z &quot;$CLT&quot; ]]; then</span><span class="l">    fail &quot;No CLT package found in softwareupdate catalog.&quot;</span><span class="l">    suggest &quot;xcode-select --install&quot;</span><span class="l">    exit 1</span><span class="l">  fi</span><span class="l"></span><span class="l">  todo &quot;Installing: $CLT&quot;</span><span class="l">  info &quot;Needs sudo — no GUI dialog.&quot;</span><span class="l"></span><span class="l">  sudo softwareupdate -i &quot;$CLT&quot; --verbose</span><span class="l"></span><span class="l">  if xcode-select -p &gt;/dev/null 2&gt;&amp;1; then</span><span class="l">    ok &quot;Installed: $(xcode-select -p)&quot;</span><span class="l">    info &quot;$(clang --version 2&gt;/dev/null | head -1)&quot;</span><span class="l">    info &quot;$(git --version 2&gt;/dev/null)&quot;</span><span class="l">  else</span><span class="l">    fail &quot;Install failed.&quot;</span><span class="l">    exit 1</span><span class="l">  fi</span><span class="l">fi</span><span class="l h">ZSH</span></code></pre>
+    </div>
+  </section>
+  <section class="step">
+    <h2><span class="n">2</span>Read the result</h2>
+    <ul class="plain">
+      <li><strong>Already installed:</strong> it prints the <code>xcode-select -p</code> path and the clang and git versions. You're done.</li>
+      <li><strong>Not installed:</strong> it picks the newest "Command Line Tools for Xcode" from <code>softwareupdate -l</code> and installs it with <code>sudo</code>.</li>
+      <li><strong>Nothing in the catalog:</strong> it stops. Run <code>xcode-select --install</code> to get Apple's dialog instead.</li>
+    </ul>
+  </section>
+  <footer>Source: <code>apps/26.9/script-runner1/data/scripts/setup/</code> in s7, with the output helpers inlined so it runs on an empty Mac.</footer>
+</main>
+
+<script src="shared.js"></script>
+
+<style>main{margin-left:0;max-width:100%;padding:24px} .finish{display:none}</style></html>

@@ -1,0 +1,869 @@
+[
+  {
+    "group": "Dialogs",
+    "domain": "NSGlobalDomain",
+    "key": "NSNavPanelExpandedStateForSaveMode",
+    "type": "bool",
+    "value": "true",
+    "description": "Save dialogs open expanded",
+    "id": "default-0",
+    "section": "defaults"
+  },
+  {
+    "group": "Dialogs",
+    "domain": "NSGlobalDomain",
+    "key": "NSNavPanelExpandedStateForSaveMode2",
+    "type": "bool",
+    "value": "true",
+    "description": "Save dialogs open expanded (newer apps)",
+    "id": "default-1",
+    "section": "defaults"
+  },
+  {
+    "group": "Dialogs",
+    "domain": "NSGlobalDomain",
+    "key": "PMPrintingExpandedStateForPrint",
+    "type": "bool",
+    "value": "true",
+    "description": "Print dialogs open expanded",
+    "id": "default-2",
+    "section": "defaults"
+  },
+  {
+    "group": "Dialogs",
+    "domain": "NSGlobalDomain",
+    "key": "PMPrintingExpandedStateForPrint2",
+    "type": "bool",
+    "value": "true",
+    "description": "Print dialogs open expanded (newer apps)",
+    "id": "default-3",
+    "section": "defaults"
+  },
+  {
+    "group": "Dialogs",
+    "domain": "com.apple.print.PrintingPrefs",
+    "key": "Quit When Finished",
+    "type": "bool",
+    "value": "true",
+    "description": "Preview quits once printing is done",
+    "id": "default-4",
+    "section": "defaults"
+  },
+  {
+    "group": "Scrolling",
+    "domain": "NSGlobalDomain",
+    "key": "AppleShowScrollBars",
+    "type": "string",
+    "value": "WhenScrolling",
+    "description": "Show scroll bars only while scrolling",
+    "id": "default-5",
+    "section": "defaults"
+  },
+  {
+    "group": "Scrolling",
+    "domain": "NSGlobalDomain",
+    "key": "AppleScrollerPagingBehavior",
+    "type": "bool",
+    "value": "true",
+    "description": "Click the scroll bar to jump to that spot",
+    "id": "default-6",
+    "section": "defaults"
+  },
+  {
+    "group": "Trackpad",
+    "domain": "NSGlobalDomain",
+    "key": "com.apple.mouse.tapBehavior",
+    "type": "int",
+    "value": "0",
+    "description": "Tap to click off",
+    "id": "default-7",
+    "section": "defaults"
+  },
+  {
+    "group": "Text",
+    "domain": "NSGlobalDomain",
+    "key": "NSAutomaticCapitalizationEnabled",
+    "type": "bool",
+    "value": "false",
+    "description": "No automatic capitalization",
+    "id": "default-8",
+    "section": "defaults"
+  },
+  {
+    "group": "Text",
+    "domain": "NSGlobalDomain",
+    "key": "NSAutomaticDashSubstitutionEnabled",
+    "type": "bool",
+    "value": "false",
+    "description": "Do not replace double hyphens with em dashes",
+    "id": "default-9",
+    "section": "defaults"
+  },
+  {
+    "group": "Text",
+    "domain": "NSGlobalDomain",
+    "key": "NSAutomaticQuoteSubstitutionEnabled",
+    "type": "bool",
+    "value": "false",
+    "description": "Use straight quotes",
+    "id": "default-10",
+    "section": "defaults"
+  },
+  {
+    "group": "Text",
+    "domain": "NSGlobalDomain",
+    "key": "NSAutomaticPeriodSubstitutionEnabled",
+    "type": "bool",
+    "value": "false",
+    "description": "Do not insert a period after a double-space",
+    "id": "default-11",
+    "section": "defaults"
+  },
+  {
+    "group": "Text",
+    "domain": "NSGlobalDomain",
+    "key": "ApplePressAndHoldEnabled",
+    "type": "bool",
+    "value": "false",
+    "description": "Hold a key to repeat it, not to pick an accent",
+    "id": "default-12",
+    "section": "defaults"
+  },
+  {
+    "group": "Keyboard",
+    "domain": "NSGlobalDomain",
+    "key": "KeyRepeat",
+    "type": "int",
+    "value": "2",
+    "description": "Fast key repeat",
+    "id": "default-13",
+    "section": "defaults"
+  },
+  {
+    "group": "Keyboard",
+    "domain": "NSGlobalDomain",
+    "key": "InitialKeyRepeat",
+    "type": "int",
+    "value": "15",
+    "description": "Short delay before repeating",
+    "id": "default-14",
+    "section": "defaults"
+  },
+  {
+    "group": "Keyboard",
+    "domain": "NSGlobalDomain",
+    "key": "AppleKeyboardUIMode",
+    "type": "int",
+    "value": "3",
+    "description": "Tab moves between every control, not just text fields",
+    "id": "default-15",
+    "section": "defaults"
+  },
+  {
+    "group": "Keyboard",
+    "domain": "NSGlobalDomain",
+    "key": "com.apple.keyboard.fnState",
+    "type": "bool",
+    "value": "true",
+    "description": "F-keys are F-keys; hold fn for brightness and volume",
+    "id": "default-16",
+    "section": "defaults"
+  },
+  {
+    "group": "Windows",
+    "domain": "NSGlobalDomain",
+    "key": "AppleShowAllFiles",
+    "type": "bool",
+    "value": "true",
+    "description": "Show hidden files (global)",
+    "id": "default-17",
+    "section": "defaults"
+  },
+  {
+    "group": "Windows",
+    "domain": "NSGlobalDomain",
+    "key": "AppleShowAllExtensions",
+    "type": "bool",
+    "value": "false",
+    "description": "Hide known file extensions",
+    "id": "default-18",
+    "section": "defaults"
+  },
+  {
+    "group": "Windows",
+    "domain": "NSGlobalDomain",
+    "key": "AppleActionOnDoubleClick",
+    "type": "string",
+    "value": "Minimize",
+    "description": "Double-clicking a title bar minimizes the window",
+    "id": "default-19",
+    "section": "defaults"
+  },
+  {
+    "group": "Windows",
+    "domain": "NSGlobalDomain",
+    "key": "NSWindowResizeTime",
+    "type": "float",
+    "value": "0.001",
+    "description": "Near-instant window resize",
+    "id": "default-20",
+    "section": "defaults"
+  },
+  {
+    "group": "Windows",
+    "domain": "NSGlobalDomain",
+    "key": "NSAutomaticWindowAnimationsEnabled",
+    "type": "bool",
+    "value": "false",
+    "description": "No window open and close animation",
+    "id": "default-21",
+    "section": "defaults"
+  },
+  {
+    "group": "Windows",
+    "domain": "NSGlobalDomain",
+    "key": "NSWindowShouldDragOnGesture",
+    "type": "bool",
+    "value": "true",
+    "description": "Ctrl-Cmd-drag anywhere in a window to move it",
+    "id": "default-22",
+    "section": "defaults"
+  },
+  {
+    "group": "Windows",
+    "domain": "NSGlobalDomain",
+    "key": "NSQuitAlwaysKeepsWindows",
+    "type": "bool",
+    "value": "false",
+    "description": "Apps do not reopen their old windows on launch",
+    "id": "default-23",
+    "section": "defaults"
+  },
+  {
+    "group": "Windows",
+    "domain": "com.apple.WindowManager",
+    "key": "EnableTiledWindowMargins",
+    "type": "bool",
+    "value": "true",
+    "description": "Keep margins around tiled windows",
+    "id": "default-24",
+    "section": "defaults"
+  },
+  {
+    "group": "Appearance",
+    "domain": "NSGlobalDomain",
+    "key": "AppleInterfaceStyleSwitchesAutomatically",
+    "type": "bool",
+    "value": "true",
+    "description": "Switch between light and dark appearance automatically",
+    "id": "default-25",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "AppleShowAllFiles",
+    "type": "bool",
+    "value": "false",
+    "description": "Hide dotfiles in Finder",
+    "id": "default-26",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "_FXShowPosixPathInTitle",
+    "type": "bool",
+    "value": "false",
+    "description": "Plain folder name in the Finder title",
+    "id": "default-27",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "_FXSortFoldersFirst",
+    "type": "bool",
+    "value": "true",
+    "description": "Folders sort above files",
+    "id": "default-28",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "_FXSortFoldersFirstOnDesktop",
+    "type": "bool",
+    "value": "true",
+    "description": "Folders sort above files on the Desktop too",
+    "id": "default-29",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "ShowStatusBar",
+    "type": "bool",
+    "value": "false",
+    "description": "No status bar",
+    "id": "default-30",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "ShowPathbar",
+    "type": "bool",
+    "value": "false",
+    "description": "Hide the path bar",
+    "id": "default-31",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "FXPreferredViewStyle",
+    "type": "string",
+    "value": "clmv",
+    "description": "Open folders in column view",
+    "id": "default-32",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "NewWindowTarget",
+    "type": "string",
+    "value": "PfDe",
+    "description": "New windows open at the Desktop",
+    "id": "default-33",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "FXDefaultSearchScope",
+    "type": "string",
+    "value": "SCcf",
+    "description": "Search the current folder first",
+    "id": "default-34",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "FXEnableExtensionChangeWarning",
+    "type": "bool",
+    "value": "false",
+    "description": "No nag when changing a file extension",
+    "id": "default-35",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "ShowHardDrivesOnDesktop",
+    "type": "bool",
+    "value": "false",
+    "description": "Hide internal disks on the Desktop",
+    "id": "default-36",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "ShowExternalHardDrivesOnDesktop",
+    "type": "bool",
+    "value": "true",
+    "description": "Show external disks on the Desktop",
+    "id": "default-37",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "ShowRemovableMediaOnDesktop",
+    "type": "bool",
+    "value": "true",
+    "description": "Show removable media on the Desktop",
+    "id": "default-38",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "FXRemoveOldTrashItems",
+    "type": "bool",
+    "value": "false",
+    "description": "Do not remove Trash items automatically after 30 days",
+    "id": "default-39",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.finder",
+    "key": "WarnOnEmptyTrash",
+    "type": "bool",
+    "value": "false",
+    "description": "Do not warn before emptying the Trash",
+    "id": "default-40",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.desktopservices",
+    "key": "DSDontWriteNetworkStores",
+    "type": "bool",
+    "value": "true",
+    "description": "No .DS_Store on network volumes",
+    "id": "default-41",
+    "section": "defaults"
+  },
+  {
+    "group": "Finder",
+    "domain": "com.apple.desktopservices",
+    "key": "DSDontWriteUSBStores",
+    "type": "bool",
+    "value": "true",
+    "description": "No .DS_Store on USB volumes",
+    "id": "default-42",
+    "section": "defaults"
+  },
+  {
+    "group": "Screenshots",
+    "domain": "com.apple.screencapture",
+    "key": "location",
+    "type": "string",
+    "value": "~/Desktop/screenshots",
+    "description": "Save to ~/Desktop/screenshots, not loose on the Desktop",
+    "id": "default-43",
+    "section": "defaults"
+  },
+  {
+    "group": "Screenshots",
+    "domain": "com.apple.screencapture",
+    "key": "type",
+    "type": "string",
+    "value": "jpg",
+    "description": "Save screenshots as JPEG",
+    "id": "default-44",
+    "section": "defaults"
+  },
+  {
+    "group": "Screenshots",
+    "domain": "com.apple.screencapture",
+    "key": "name",
+    "type": "string",
+    "value": "screenshot",
+    "description": "Name files 'screenshot', not 'Screen Shot'",
+    "id": "default-45",
+    "section": "defaults"
+  },
+  {
+    "group": "Screenshots",
+    "domain": "com.apple.screencapture",
+    "key": "include-date",
+    "type": "bool",
+    "value": "true",
+    "description": "Keep the timestamp in the filename",
+    "id": "default-46",
+    "section": "defaults"
+  },
+  {
+    "group": "Screenshots",
+    "domain": "com.apple.screencapture",
+    "key": "disable-shadow",
+    "type": "bool",
+    "value": "true",
+    "description": "Screenshots without the window shadow",
+    "id": "default-47",
+    "section": "defaults"
+  },
+  {
+    "group": "Screenshots",
+    "domain": "com.apple.screencapture",
+    "key": "show-thumbnail",
+    "type": "bool",
+    "value": "true",
+    "description": "Show the floating thumbnail after capture",
+    "id": "default-48",
+    "section": "defaults"
+  },
+  {
+    "group": "Screen saver",
+    "domain": "com.apple.screensaver",
+    "key": "idleTime",
+    "type": "int",
+    "value": "300",
+    "description": "Screen saver after 5 minutes idle",
+    "currentHost": true,
+    "id": "default-49",
+    "section": "defaults"
+  },
+  {
+    "group": "Dock",
+    "domain": "com.apple.dock",
+    "key": "autohide",
+    "type": "bool",
+    "value": "true",
+    "description": "Auto-hide the Dock",
+    "id": "default-50",
+    "section": "defaults"
+  },
+  {
+    "group": "Dock",
+    "domain": "com.apple.dock",
+    "key": "autohide-delay",
+    "type": "float",
+    "value": "0",
+    "description": "No delay before the Dock appears",
+    "id": "default-51",
+    "section": "defaults"
+  },
+  {
+    "group": "Dock",
+    "domain": "com.apple.dock",
+    "key": "autohide-time-modifier",
+    "type": "float",
+    "value": "0.15",
+    "description": "Faster Dock animation",
+    "id": "default-52",
+    "section": "defaults"
+  },
+  {
+    "group": "Dock",
+    "domain": "com.apple.dock",
+    "key": "orientation",
+    "type": "string",
+    "value": "left",
+    "description": "Dock appears on the left",
+    "id": "default-53",
+    "section": "defaults"
+  },
+  {
+    "group": "Dock",
+    "domain": "com.apple.dock",
+    "key": "tilesize",
+    "type": "int",
+    "value": "48",
+    "description": "Dock icons at 48px",
+    "id": "default-54",
+    "section": "defaults"
+  },
+  {
+    "group": "Dock",
+    "domain": "com.apple.dock",
+    "key": "magnification",
+    "type": "bool",
+    "value": "false",
+    "description": "Dock magnification off",
+    "id": "default-55",
+    "section": "defaults"
+  },
+  {
+    "group": "Dock",
+    "domain": "com.apple.dock",
+    "key": "scroll-to-open",
+    "type": "bool",
+    "value": "true",
+    "description": "Scroll up on a Dock icon to open its windows",
+    "id": "default-56",
+    "section": "defaults"
+  },
+  {
+    "group": "Dock",
+    "domain": "com.apple.dock",
+    "key": "show-recents",
+    "type": "bool",
+    "value": "false",
+    "description": "No recent apps in the Dock",
+    "id": "default-57",
+    "section": "defaults"
+  },
+  {
+    "group": "Dock",
+    "domain": "com.apple.dock",
+    "key": "no-bouncing",
+    "type": "bool",
+    "value": "true",
+    "description": "Dock icons do not bounce for attention",
+    "id": "default-58",
+    "section": "defaults"
+  },
+  {
+    "group": "Dock",
+    "domain": "com.apple.dock",
+    "key": "minimize-to-application",
+    "type": "bool",
+    "value": "true",
+    "description": "Minimize into the app's own Dock icon",
+    "id": "default-59",
+    "section": "defaults"
+  },
+  {
+    "group": "Dock",
+    "domain": "com.apple.dock",
+    "key": "mineffect",
+    "type": "string",
+    "value": "scale",
+    "description": "Scale rather than genie on minimize",
+    "id": "default-60",
+    "section": "defaults"
+  },
+  {
+    "group": "Mission Control",
+    "domain": "com.apple.dock",
+    "key": "mru-spaces",
+    "type": "bool",
+    "value": "false",
+    "description": "Do not reorder Spaces by most recent use",
+    "id": "default-61",
+    "section": "defaults"
+  },
+  {
+    "group": "Mission Control",
+    "domain": "com.apple.dock",
+    "key": "expose-animation-duration",
+    "type": "float",
+    "value": "0.1",
+    "description": "Faster Mission Control animation",
+    "id": "default-62",
+    "section": "defaults"
+  },
+  {
+    "group": "Mission Control",
+    "domain": "com.apple.dock",
+    "key": "expose-group-apps",
+    "type": "bool",
+    "value": "true",
+    "description": "Group windows by app in Mission Control",
+    "id": "default-63",
+    "section": "defaults"
+  },
+  {
+    "group": "Hot corners",
+    "domain": "com.apple.dock",
+    "key": "wvous-br-corner",
+    "type": "int",
+    "value": "0",
+    "description": "Bottom-right corner does nothing",
+    "id": "default-64",
+    "section": "defaults"
+  },
+  {
+    "group": "Hot corners",
+    "domain": "com.apple.dock",
+    "key": "wvous-br-modifier",
+    "type": "int",
+    "value": "0",
+    "description": "Bottom-right corner has no modifier key",
+    "id": "default-65",
+    "section": "defaults"
+  },
+  {
+    "group": "Dwell",
+    "domain": "com.apple.universalaccess",
+    "key": "dwellTimeDefaultAction",
+    "type": "float",
+    "value": "0.25",
+    "description": "Perform the default dwell action after 0.25 seconds",
+    "id": "default-66",
+    "section": "defaults"
+  },
+  {
+    "group": "Dwell",
+    "domain": "com.apple.universalaccess",
+    "key": "virtualKeyboardCornerActionType",
+    "type": "intDict",
+    "value": "{\"0\":0,\"1\":1,\"2\":0,\"3\":0}",
+    "description": "Only the bottom-right dwell corner hides or shows the Home Panel",
+    "id": "default-67",
+    "section": "defaults"
+  },
+  {
+    "group": "System maintenance",
+    "domain": "com.apple.SoftwareUpdate",
+    "key": "AutomaticCheckEnabled",
+    "type": "bool",
+    "value": "true",
+    "description": "Check for software updates automatically",
+    "id": "default-68",
+    "section": "defaults"
+  },
+  {
+    "group": "System maintenance",
+    "domain": "com.apple.SoftwareUpdate",
+    "key": "AutomaticDownload",
+    "type": "bool",
+    "value": "true",
+    "description": "Download available updates automatically",
+    "id": "default-69",
+    "section": "defaults"
+  },
+  {
+    "group": "System maintenance",
+    "domain": "com.apple.SoftwareUpdate",
+    "key": "AutomaticallyInstallMacOSUpdates",
+    "type": "bool",
+    "value": "true",
+    "description": "Install macOS updates automatically",
+    "id": "default-70",
+    "section": "defaults"
+  },
+  {
+    "group": "System maintenance",
+    "domain": "com.apple.SoftwareUpdate",
+    "key": "CriticalUpdateInstall",
+    "type": "bool",
+    "value": "true",
+    "description": "Install security and system data updates automatically",
+    "id": "default-71",
+    "section": "defaults"
+  },
+  {
+    "group": "System maintenance",
+    "domain": "com.apple.SoftwareUpdate",
+    "key": "ConfigDataInstall",
+    "type": "bool",
+    "value": "true",
+    "description": "Install system data files automatically",
+    "id": "default-72",
+    "section": "defaults"
+  },
+  {
+    "group": "Crash reports",
+    "domain": "com.apple.CrashReporter",
+    "key": "DialogType",
+    "type": "string",
+    "value": "none",
+    "description": "No crash reporter dialog when an app quits",
+    "id": "default-73",
+    "section": "defaults"
+  },
+  {
+    "group": "Zoom",
+    "domain": "com.apple.universalaccess",
+    "key": "closeViewHotkeysEnabled",
+    "type": "bool",
+    "value": "true",
+    "description": "Zoom keyboard shortcuts on",
+    "id": "default-74",
+    "section": "defaults"
+  },
+  {
+    "group": "Zoom",
+    "domain": "com.apple.universalaccess",
+    "key": "closeViewScrollWheelToggle",
+    "type": "bool",
+    "value": "true",
+    "description": "Scroll with a modifier key to zoom",
+    "id": "default-75",
+    "section": "defaults"
+  },
+  {
+    "group": "Zoom",
+    "domain": "com.apple.universalaccess",
+    "key": "closeViewZoomMode",
+    "type": "int",
+    "value": "3",
+    "description": "Zoom follows the pointer in a picture-in-picture window",
+    "id": "default-76",
+    "section": "defaults"
+  },
+  {
+    "group": "Zoom",
+    "domain": "com.apple.universalaccess",
+    "key": "closeViewScrollWheelModifiersInt",
+    "type": "int",
+    "value": "4",
+    "description": "Control is the zoom modifier",
+    "id": "default-77",
+    "section": "defaults"
+  },
+  {
+    "id": "gesture-78",
+    "section": "gestures",
+    "group": "Mission Control",
+    "domain": "com.apple.AppleMultitouchTrackpad",
+    "key": "TrackpadThreeFingerVertSwipeGesture",
+    "type": "int",
+    "value": "0",
+    "description": "Three-finger Mission Control swipe off · com.apple.AppleMultitouchTrackpad",
+    "currentHost": false
+  },
+  {
+    "id": "gesture-79",
+    "section": "gestures",
+    "group": "Mission Control",
+    "domain": "com.apple.AppleMultitouchTrackpad",
+    "key": "TrackpadFourFingerVertSwipeGesture",
+    "type": "int",
+    "value": "0",
+    "description": "Four-finger Mission Control swipe off · com.apple.AppleMultitouchTrackpad",
+    "currentHost": false
+  },
+  {
+    "id": "gesture-80",
+    "section": "gestures",
+    "group": "Mission Control",
+    "domain": "com.apple.driver.AppleBluetoothMultitouch.trackpad",
+    "key": "TrackpadThreeFingerVertSwipeGesture",
+    "type": "int",
+    "value": "0",
+    "description": "Three-finger Mission Control swipe off · com.apple.driver.AppleBluetoothMultitouch.trackpad",
+    "currentHost": false
+  },
+  {
+    "id": "gesture-81",
+    "section": "gestures",
+    "group": "Mission Control",
+    "domain": "com.apple.driver.AppleBluetoothMultitouch.trackpad",
+    "key": "TrackpadFourFingerVertSwipeGesture",
+    "type": "int",
+    "value": "0",
+    "description": "Four-finger Mission Control swipe off · com.apple.driver.AppleBluetoothMultitouch.trackpad",
+    "currentHost": false
+  },
+  {
+    "id": "gesture-82",
+    "section": "gestures",
+    "group": "Mission Control",
+    "domain": "NSGlobalDomain",
+    "key": "com.apple.trackpad.threeFingerVertSwipeGesture",
+    "type": "int",
+    "value": "0",
+    "description": "Three-finger Mission Control swipe off · NSGlobalDomain",
+    "currentHost": true
+  },
+  {
+    "id": "gesture-83",
+    "section": "gestures",
+    "group": "Mission Control",
+    "domain": "NSGlobalDomain",
+    "key": "com.apple.trackpad.fourFingerVertSwipeGesture",
+    "type": "int",
+    "value": "0",
+    "description": "Four-finger Mission Control swipe off · NSGlobalDomain",
+    "currentHost": true
+  },
+  {
+    "id": "gesture-84",
+    "section": "gestures",
+    "group": "Accessibility",
+    "domain": "com.apple.universalaccess",
+    "key": "closeViewTrackpadGestureZoomEnabled",
+    "type": "bool",
+    "value": "true",
+    "description": "Use trackpad gesture to zoom"
+  },
+  {
+    "id": "gesture-85",
+    "section": "gestures",
+    "group": "Accessibility",
+    "domain": "com.apple.universalaccess",
+    "key": "virtualKeyboardOnOff",
+    "type": "bool",
+    "value": "true",
+    "description": "Turn on Accessibility Keyboard"
+  }
+]

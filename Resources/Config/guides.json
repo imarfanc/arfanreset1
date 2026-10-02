@@ -1,0 +1,42 @@
+[
+  {
+    "file": "disk-usage-macos.html",
+    "title": "Disk usage (macOS)"
+  },
+  {
+    "file": "disk-usage.html",
+    "title": "Disk usage (uv)"
+  },
+  {
+    "file": "install-cli-tools.html",
+    "title": "Install CLI Tools"
+  },
+  {
+    "file": "install-command-line-tools.html",
+    "title": "Install Command Line Tools"
+  },
+  {
+    "file": "install-homebrew.html",
+    "title": "Install Homebrew"
+  },
+  {
+    "file": "optional-builds.html",
+    "title": "Optional builds"
+  },
+  {
+    "file": "optional-cli-tools.html",
+    "title": "Optional CLI tools"
+  },
+  {
+    "file": "setup-defaults.html",
+    "title": "Set macOS Defaults"
+  },
+  {
+    "file": "setup-defaults2.html",
+    "title": "Trackpad and Accessibility"
+  },
+  {
+    "file": "setup-zsh.html",
+    "title": "Faster zsh startup"
+  }
+]

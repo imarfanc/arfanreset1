@@ -1,0 +1,23 @@
+{
+  "START": "# >>> reset1 fast shell >>>",
+  "END": "# <<< reset1 fast shell <<<",
+  "CONFIG": "# Interactive zsh only. Tool installers run separately, never at startup.\n[[ -o interactive ]] || return\n\n# zsh's tied arrays keep PATH and FPATH unique, including after re-sourcing.\ntypeset -gU path fpath\nexport BUN_INSTALL=\"${BUN_INSTALL:-$HOME/.bun}\"\nexport PNPM_HOME=\"${PNPM_HOME:-${XDG_DATA_HOME:-$HOME/Library}/pnpm}\"\nexport NVM_DIR=\"${NVM_DIR:-$HOME/.nvm}\"\npath=(\n  \"$HOME/.local/bin\" \"$BUN_INSTALL/bin\" \"$HOME/.deno/bin\"\n  \"$PNPM_HOME/bin\" \"$PNPM_HOME\" \"$HOME/.opencode/bin\"\n  \"$HOME/.atuin/bin\" \"$HOME/.cargo/bin\" /usr/local/go/bin\n  $path\n)\nexport PATH\n\n# Register completion directories BEFORE compinit, with no tool subprocesses.\n() {\n  local dir\n  for dir in \"$HOME/.zsh/completions\" \"$BUN_INSTALL\" \\\n             /opt/homebrew/share/zsh/site-functions /usr/local/share/zsh/site-functions; do\n    [[ -d \"$dir\" ]] && fpath=(\"$dir\" $fpath)\n  done\n  return 0\n}\n\n# NVM's Bash completion adapter is also deferred until completions are needed.\n_reset1_nvm_completions() {\n  if (( ${_reset1_nvm_loaded:-0} && $+functions[compdef] && ! ${_reset1_nvm_completion_loaded:-0} )) \\\n     && [[ -s \"$NVM_DIR/bash_completion\" ]]; then\n    autoload -Uz bashcompinit\n    bashcompinit\n    source \"$NVM_DIR/bash_completion\"\n    typeset -g _reset1_nvm_completion_loaded=1\n  fi\n  return 0\n}\n\n# First Tab initializes normal cached completions. Frameworks that already\n# provide compdef keep their completion system and key bindings.\nreset1-completions() {\n  if (( ! $+functions[compdef] )); then\n    autoload -Uz compinit\n    compinit -i -d \"${ZDOTDIR:-$HOME}/.zcompdump-reset1\" || return\n    bindkey -M emacs '^I' expand-or-complete\n    bindkey -M viins '^I' expand-or-complete\n  fi\n  _reset1_nvm_completions\n}\n_reset1_first_tab() {\n  reset1-completions || return\n  zle expand-or-complete\n}\nif (( ! $+functions[compdef] )); then\n  zle -N reset1-first-tab _reset1_first_tab\n  bindkey -M emacs '^I' reset1-first-tab\n  bindkey -M viins '^I' reset1-first-tab\nfi\n\n# Load nvm once, on the first nvm/node/npm/npx/corepack command.\n# No directory-change hook and no automatic .nvmrc scan on every prompt.\nif [[ -s \"$NVM_DIR/nvm.sh\" ]] && (( ! $+functions[nvm] )); then\n  _reset1_load_nvm() {\n    local requested=\"$1\"\n    shift\n    unfunction nvm node npm npx corepack\n    source \"$NVM_DIR/nvm.sh\" --no-use || return\n    typeset -g _reset1_nvm_loaded=1\n    _reset1_nvm_completions\n    if [[ \"$requested\" == nvm ]]; then\n      # Keep Node usable after e.g. `nvm --version`, but allow `nvm install`\n      # even when this machine has no installed default yet.\n      nvm use --silent default >/dev/null 2>&1\n      nvm \"$@\"\n    else\n      nvm use --silent default >/dev/null || {\n        print -u2 'No default Node available. Run: nvm install 26 && nvm alias default 26'\n        return 1\n      }\n      command \"$requested\" \"$@\"\n    fi\n  }\n  nvm() { _reset1_load_nvm nvm \"$@\"; }\n  node() { _reset1_load_nvm node \"$@\"; }\n  npm() { _reset1_load_nvm npm \"$@\"; }\n  npx() { _reset1_load_nvm npx \"$@\"; }\n  corepack() { _reset1_load_nvm corepack \"$@\"; }\nfi\n:\n",
+  "EAGER_LINES": [
+    ". \"$NVM_DIR/nvm.sh\"",
+    "[ -s \"$NVM_DIR/bash_completion\" ] && . \"$NVM_DIR/bash_completion\"",
+    "[ -s \"$NVM_DIR/bash_completion\" ] && \\. \"$NVM_DIR/bash_completion\"",
+    "[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"",
+    "[ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\"",
+    "[ -s \"$NVM_DIR/nvm.sh\" ] && source \"$NVM_DIR/nvm.sh\"",
+    "[[ -s \"$BUN_COMPLETIONS\" ]] && source \"$BUN_COMPLETIONS\"",
+    "autoload -U compinit",
+    "autoload -Uz compinit",
+    "compinit",
+    "compinit -C",
+    "eval \"$(deno completions zsh)\"",
+    "eval \"$(uv generate-shell-completion zsh)\"",
+    "source \"$BUN_COMPLETIONS\"",
+    "source \"$BUN_INSTALL/_bun\"",
+    "source \"$NVM_DIR/nvm.sh\""
+  ]
+}

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install CLI Tools</title>
+<link rel="stylesheet" href="shared.css">
+
+<main>
+  <p class="kicker">Step 2 of 5</p>
+  <h1>Install CLI tools</h1>
+  <p class="lede">One paste per tool. Each is independent, so pick the ones you want in any order. Open a new Terminal window when you finish.</p>
+  <ul class="facts"><li>no password</li><li>installs into your home folder</li><li>safe to rerun</li></ul>
+  <section class="step">
+    <h2><span class="n">1</span>Deno</h2>
+    <p><a href="https://deno.com">deno.com</a>. Step 4 needs it. When the installer asks about your shell, either answer works.</p>
+    <div class="panel">
+      <div class="bar"><span class="name">deno</span><span class="meta">1 line</span><span class="spacer"></span><button class="btn primary" type="button" data-copy="deno"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copy</span></button></div>
+      <pre class="one"><code id="deno" data-lang="bash"><span class="l">curl -fsSL https://deno.land/install.sh | sh</span></code></pre>
+    </div>
+  </section>
+  <section class="step">
+    <h2><span class="n">2</span>uv</h2>
+    <p><a href="https://docs.astral.sh/uv/">docs.astral.sh/uv</a>. Python and packages. Step 5, the disk scan and the version check below all run through it.</p>
+    <div class="panel">
+      <div class="bar"><span class="name">uv</span><span class="meta">1 line</span><span class="spacer"></span><button class="btn primary" type="button" data-copy="uv"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copy</span></button></div>
+      <pre class="one"><code id="uv" data-lang="bash"><span class="l">curl -LsSf https://astral.sh/uv/install.sh | sh</span></code></pre>
+    </div>
+  </section>
+  <section class="step">
+    <h2><span class="n">3</span>Atuin</h2>
+    <p><a href="https://atuin.sh">atuin.sh</a>. Searchable shell history on Ctrl-R.</p>
+    <div class="panel">
+      <div class="bar"><span class="name">atuin</span><span class="meta">1 line</span><span class="spacer"></span><button class="btn primary" type="button" data-copy="atuin"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copy</span></button></div>
+      <pre class="one"><code id="atuin" data-lang="bash"><span class="l">curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh</span></code></pre>
+    </div>
+  </section>
+  <section class="step">
+    <h2><span class="n">4</span>Claude Code</h2>
+    <p><a href="https://claude.ai/code">claude.ai/code</a>. Run <code>claude</code> afterwards to sign in.</p>
+    <div class="panel">
+      <div class="bar"><span class="name">claude</span><span class="meta">1 line</span><span class="spacer"></span><button class="btn primary" type="button" data-copy="claude"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copy</span></button></div>
+      <pre class="one"><code id="claude" data-lang="bash"><span class="l">curl -fsSL https://claude.ai/install.sh | bash</span></code></pre>
+    </div>
+  </section>
+  <section class="step">
+    <h2><span class="n">5</span>Codex</h2>
+    <p><a href="https://chatgpt.com/codex">chatgpt.com/codex</a>. Run <code>codex</code> afterwards to sign in.</p>
+    <div class="panel">
+      <div class="bar"><span class="name">codex</span><span class="meta">1 line</span><span class="spacer"></span><button class="btn primary" type="button" data-copy="codex"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copy</span></button></div>
+      <pre class="one"><code id="codex" data-lang="bash"><span class="l">curl -fsSL https://chatgpt.com/codex/install.sh | sh</span></code></pre>
+    </div>
+  </section>
+  <section class="step">
+    <h2><span class="n">6</span>nvm and Node.js</h2>
+    <p><a href="https://github.com/nvm-sh/nvm">nvm</a> and <a href="https://nodejs.org/en/download">nodejs.org</a>. Installs nvm, loads it in this window, then installs Node 26 with npm.</p>
+    <div class="panel">
+      <div class="bar"><span class="name">nvm + node</span><span class="meta">8 lines</span><span class="spacer"></span><button class="btn primary" type="button" data-copy="node"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copy</span></button></div>
+      <pre class="one"><code id="node" data-lang="bash"><span class="l"># Download and install nvm:</span><span class="l">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash</span><span class="l"></span><span class="l"># in lieu of restarting the shell</span><span class="l">\. "$HOME/.nvm/nvm.sh"</span><span class="l"></span><span class="l"># Download and install Node.js:</span><span class="l">nvm install 26</span></code></pre>
+    </div>
+  </section>
+  <section class="step">
+    <h2><span class="n">7</span>Bun</h2>
+    <p><a href="https://bun.sh">bun.sh</a>. JavaScript runtime and package manager.</p>
+    <div class="panel">
+      <div class="bar"><span class="name">bun</span><span class="meta">1 line</span><span class="spacer"></span><button class="btn primary" type="button" data-copy="bun"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copy</span></button></div>
+      <pre class="one"><code id="bun" data-lang="bash"><span class="l">curl -fsSL https://bun.sh/install | bash</span></code></pre>
+    </div>
+  </section>
+  <section class="step">
+    <h2><span class="n">8</span>OpenCode</h2>
+    <p><a href="https://opencode.ai">opencode.ai</a>. Run <code>opencode</code> afterwards to get started.</p>
+    <div class="panel">
+      <div class="bar"><span class="name">opencode</span><span class="meta">1 line</span><span class="spacer"></span><button class="btn primary" type="button" data-copy="opencode"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copy</span></button></div>
+      <pre class="one"><code id="opencode" data-lang="bash"><span class="l">curl -fsSL https://opencode.ai/v2/install | bash</span></code></pre>
+    </div>
+  </section>
+  <section class="step">
+    <h2><span class="n">9</span>Check versions</h2>
+    <p>Paste in a <strong>new</strong> Terminal window. One table shows each tool's path and version, or "not found". It also covers Xcode, the Command Line Tools, brew, perl and swift. Bash and zsh are included with their paths (like <code>which bash</code> and <code>which zsh</code>) and <code>--version</code> results. Expect Node <code>26.10.0</code> and npm <code>11.19.1</code>.</p>
+    <div class="panel">
+      <div class="bar"><span class="name">check-tools.py</span><span class="meta">134 lines</span><span class="spacer"></span><button class="btn primary" type="button" data-copy="check"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>Copy</span></button></div>
+      <pre class="tall"><code id="check" data-lang="python"><span class="l h">uv run --with rich python3 - &lt;&lt;&#x27;PY&#x27;</span><span class="l">&quot;&quot;&quot;Where each developer tool lives and which version it is, as one table.&quot;&quot;&quot;</span><span class="l">from __future__ import annotations</span><span class="l"></span><span class="l">import os</span><span class="l">import re</span><span class="l">import shutil</span><span class="l">import subprocess</span><span class="l">from concurrent.futures import ThreadPoolExecutor</span><span class="l">from dataclasses import dataclass</span><span class="l">from pathlib import Path</span><span class="l"></span><span class="l">from rich.console import Console</span><span class="l">from rich.table import Table</span><span class="l"></span><span class="l">HOME = Path.home()</span><span class="l"></span><span class="l"></span><span class="l">@dataclass</span><span class="l">class Tool:</span><span class="l">    group: str</span><span class="l">    name: str</span><span class="l">    version: list[str]</span><span class="l">    note: str = &quot;&quot;</span><span class="l"></span><span class="l"></span><span class="l">TOOLS = [</span><span class="l">    Tool(&quot;Apple&quot;, &quot;xcode&quot;, [&quot;xcodebuild&quot;, &quot;-version&quot;], &quot;active developer folder&quot;),</span><span class="l">    Tool(&quot;Apple&quot;, &quot;clt&quot;, [], &quot;Command Line Tools&quot;),</span><span class="l">    Tool(&quot;Apple&quot;, &quot;clang&quot;, [&quot;clang&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Apple&quot;, &quot;git&quot;, [&quot;git&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Apple&quot;, &quot;swift&quot;, [&quot;swift&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Apple&quot;, &quot;swiftc&quot;, [&quot;swiftc&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Apple&quot;, &quot;perl&quot;, [&quot;perl&quot;, &quot;-e&quot;, &quot;print $^V&quot;]),</span><span class="l">    Tool(&quot;Package managers&quot;, &quot;brew&quot;, [&quot;brew&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Package managers&quot;, &quot;uv&quot;, [&quot;uv&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Runtimes&quot;, &quot;deno&quot;, [&quot;deno&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Runtimes&quot;, &quot;bun&quot;, [&quot;bun&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Runtimes&quot;, &quot;nvm&quot;, [], &quot;a shell function&quot;),</span><span class="l">    Tool(&quot;Runtimes&quot;, &quot;node&quot;, [&quot;node&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Runtimes&quot;, &quot;npm&quot;, [&quot;npm&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Shell&quot;, &quot;bash&quot;, [&quot;bash&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Shell&quot;, &quot;zsh&quot;, [&quot;zsh&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Shell&quot;, &quot;atuin&quot;, [&quot;atuin&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Agents&quot;, &quot;claude&quot;, [&quot;claude&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Agents&quot;, &quot;codex&quot;, [&quot;codex&quot;, &quot;--version&quot;]),</span><span class="l">    Tool(&quot;Agents&quot;, &quot;opencode&quot;, [&quot;opencode&quot;, &quot;--version&quot;]),</span><span class="l">]</span><span class="l"></span><span class="l"># Installers put these on PATH through the shell profile, which a pasted heredoc may not have loaded.</span><span class="l">EXTRA_PATH = [HOME / &quot;.deno/bin&quot;, HOME / &quot;.bun/bin&quot;, HOME / &quot;.atuin/bin&quot;, HOME / &quot;.opencode/bin&quot;, HOME / &quot;.local/bin&quot;, Path(&quot;/opt/homebrew/bin&quot;)]</span><span class="l">os.environ[&quot;PATH&quot;] = os.pathsep.join([os.environ.get(&quot;PATH&quot;, &quot;&quot;), *map(str, EXTRA_PATH)])</span><span class="l"></span><span class="l"></span><span class="l">def run(args: list[str]) -&gt; str:</span><span class="l">    try:</span><span class="l">        done = subprocess.run(args, capture_output=True, text=True, timeout=20)</span><span class="l">    except (OSError, subprocess.TimeoutExpired):</span><span class="l">        return &quot;&quot;</span><span class="l">    return (done.stdout or done.stderr).strip() if done.returncode == 0 else &quot;&quot;</span><span class="l"></span><span class="l"></span><span class="l">def version_of(text: str) -&gt; str:</span><span class="l">    match = re.search(r&quot;\d+(\.\d+)+&quot;, text)</span><span class="l">    return match.group(0) if match else text.splitlines()[0] if text else &quot;&quot;</span><span class="l"></span><span class="l"></span><span class="l">def nvm() -&gt; tuple[str, str]:</span><span class="l">    script = HOME / &quot;.nvm/nvm.sh&quot;</span><span class="l">    if not script.exists():</span><span class="l">        return &quot;&quot;, &quot;&quot;</span><span class="l">    return str(script), version_of(run([&quot;bash&quot;, &quot;-c&quot;, f&#x27;. &quot;{script}&quot; &amp;&amp; nvm --version&#x27;]))</span><span class="l"></span><span class="l"></span><span class="l">def node_path() -&gt; None:</span><span class="l">    # nvm&#x27;s node is only on PATH once nvm.sh has run; fall back to its default alias.</span><span class="l">    if shutil.which(&quot;node&quot;):</span><span class="l">        return</span><span class="l">    versions = sorted((HOME / &quot;.nvm/versions/node&quot;).glob(&quot;v*/bin&quot;), key=lambda p: [int(n) for n in re.findall(r&quot;\d+&quot;, p.parent.name)])</span><span class="l">    if versions:</span><span class="l">        os.environ[&quot;PATH&quot;] += os.pathsep + str(versions[-1])</span><span class="l"></span><span class="l"></span><span class="l">def check(tool: Tool) -&gt; tuple[Tool, str, str]:</span><span class="l">    if tool.name == &quot;nvm&quot;:</span><span class="l">        return (tool, *nvm())</span><span class="l">    if tool.name == &quot;xcode&quot;:</span><span class="l">        path = run([&quot;xcode-select&quot;, &quot;-p&quot;])</span><span class="l">        full = run(tool.version) if path.startswith(&quot;/Applications/&quot;) else &quot;&quot;</span><span class="l">        return tool, path, version_of(full) if full else (&quot;CLT only&quot; if path else &quot;&quot;)</span><span class="l">    if tool.name == &quot;clt&quot;:</span><span class="l">        info = run([&quot;/usr/sbin/pkgutil&quot;, &quot;--pkg-info=com.apple.pkg.CLTools_Executables&quot;])</span><span class="l">        folder = &quot;/Library/Developer/CommandLineTools&quot;</span><span class="l">        version = &quot;.&quot;.join(version_of(info.split(&quot;version:&quot;, 1)[-1]).split(&quot;.&quot;)[:3]) if info else &quot;&quot;</span><span class="l">        return tool, folder if Path(folder).exists() else &quot;&quot;, version</span><span class="l">    path = shutil.which(tool.name) or &quot;&quot;</span><span class="l">    return tool, path, version_of(run(tool.version)) if path else &quot;&quot;</span><span class="l"></span><span class="l"></span><span class="l">def short(path: str) -&gt; str:</span><span class="l">    return path.replace(str(HOME), &quot;~&quot;, 1)</span><span class="l"></span><span class="l"></span><span class="l">node_path()</span><span class="l">console = Console()</span><span class="l">with console.status(&quot;Checking tools…&quot;):</span><span class="l">    with ThreadPoolExecutor() as pool:</span><span class="l">        results = list(pool.map(check, TOOLS))</span><span class="l"></span><span class="l">table = Table(title=&quot;Developer tools&quot;, title_justify=&quot;left&quot;, header_style=&quot;bold&quot;, pad_edge=False)</span><span class="l">table.add_column(&quot;Group&quot;, style=&quot;dim&quot;)</span><span class="l">table.add_column(&quot;Tool&quot;, style=&quot;bold&quot;)</span><span class="l">table.add_column(&quot;Version&quot;, style=&quot;green&quot;)</span><span class="l">table.add_column(&quot;Path&quot;, overflow=&quot;fold&quot;)</span><span class="l"></span><span class="l">missing = []</span><span class="l">last_group = &quot;&quot;</span><span class="l">for tool, path, version in results:</span><span class="l">    group = tool.group if tool.group != last_group else &quot;&quot;</span><span class="l">    last_group = tool.group</span><span class="l">    name = f&quot;{tool.name}\n[dim]{tool.note}[/]&quot; if tool.note else tool.name</span><span class="l">    if path:</span><span class="l">        table.add_row(group, name, version or &quot;[yellow]?[/]&quot;, short(path))</span><span class="l">    else:</span><span class="l">        missing.append(tool.name)</span><span class="l">        table.add_row(group, name, &quot;&quot;, &quot;[red]not found[/]&quot;)</span><span class="l"></span><span class="l">console.print(table)</span><span class="l">if missing:</span><span class="l">    console.print(f&quot;\n[yellow]•[/] Not found: {&#x27;, &#x27;.join(missing)}&quot;)</span><span class="l">else:</span><span class="l">    console.print(f&quot;\n[green]✓[/] All {len(TOOLS)} tools found&quot;)</span><span class="l h">PY</span></code></pre>
+    </div>
+  </section>
+  <footer>Each installer is the one its project publishes on the linked page.</footer>
+</main>
+
+<script src="shared.js"></script>
+
+<style>main{margin-left:0;max-width:100%;padding:24px} .finish{display:none}</style></html>

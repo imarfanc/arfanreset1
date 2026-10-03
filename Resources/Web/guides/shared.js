@@ -1,119 +1,8 @@
 (async () => {
-// Every reset page, in the order the sidebar and the index show them. Pages with a step number
-// go under "Fresh Mac, in order"; optional pages and tools have separate groups.
-const PAGES = [
-  { file: 'install-command-line-tools.html', label: 'Command Line Tools', title: 'Install Command Line Tools', step: 1, about: 'clang, git and make from Software Update. No dialog.' },
-  { file: 'install-cli-tools.html', label: 'CLI tools', title: 'Install CLI tools', step: 2, about: 'Deno, uv, Atuin, Claude Code, Codex, Node through nvm, Bun, and OpenCode.' },
-  { file: 'install-homebrew.html', label: 'Homebrew', title: 'Install Homebrew', step: 3, about: 'The brew.sh installer, then brew on your PATH.' },
-  { file: 'setup-defaults.html', label: 'macOS defaults', title: 'Set macOS defaults', step: 4, about: 'Finder, keyboard, Dock, screenshot and zoom settings in one paste.' },
-  { file: 'setup-defaults2.html', label: 'Trackpad & Accessibility', title: 'Trackpad and Accessibility', step: 5, about: 'Mission Control gesture off, zoom gesture on, Accessibility Keyboard on.' },
-  { file: 'optional-cli-tools.html', label: 'Optional CLI tools', title: 'Optional CLI tools', group: 'Optional', about: 'Go, Zig 0.16.0, and Rust installers for Apple Silicon.' },
-  { file: 'optional-builds.html', label: 'Optional builds', title: 'Optional builds', group: 'Optional', about: 'Build Ghostty with the Zig version its checkout requires.' },
-  { file: 'setup-zsh.html', label: 'faster zsh startup', title: 'Faster zsh startup', group: 'Optional', about: 'Back up .zshrc and defer nvm and completions until first use.' },
-  { file: 'disk-usage.html', label: 'disk usage (uv)', title: 'Disk usage (uv)', about: 'Scan your home folder with uv and Rich. Read only.' },
-  { file: 'disk-usage-macos.html', label: 'disk usage (macOS)', title: 'Disk usage (macOS)', about: 'The same scan with system python3 and a temporary environment. No uv needed.' },
-];
-const STEPS = PAGES.filter(page => page.step);
-const GROUPS = [
-  ['Fresh Mac, in order', STEPS],
-  ['Optional', PAGES.filter(page => page.group === 'Optional')],
-  ['Tools', PAGES.filter(page => !page.step && !page.group)],
-];
-
-const here = location.pathname.split('/').pop() || 'index.html';
 function build(tag, props, children) {
   const node = Object.assign(document.createElement(tag), props);
   node.append(...children);
   return node;
-}
-
-// Done marks live in this browser only, keyed by file name.
-const KEY = 'reset1:done';
-const done = new Set(JSON.parse(localStorage.getItem(KEY) || '[]'));
-const save = () => localStorage.setItem(KEY, JSON.stringify([...done]));
-const doneCount = () => STEPS.filter(page => done.has(page.file)).length;
-const nextStep = () => STEPS.find(page => !done.has(page.file));
-
-function item({ file, label, step }) {
-  const link = build('a', { className: 'item', href: file }, [
-    build('span', { className: 'dot', textContent: done.has(file) ? '✓' : step ?? '·' }, []), label,
-  ]);
-  link.classList.toggle('is-done', done.has(file));
-  if (file === here) link.setAttribute('aria-current', 'page');
-  return build('li', {}, [link]);
-}
-
-function renderRail(rail) {
-  const count = doneCount();
-  const meter = build('div', { className: 'meter', role: 'img', ariaLabel: `${count} of ${STEPS.length} steps done` }, STEPS.map(page => {
-    const segment = build('i', { title: `${page.step}. ${page.label}` }, []);
-    segment.classList.toggle('on', done.has(page.file));
-    segment.classList.toggle('here', page.file === here);
-    return segment;
-  }));
-  rail.replaceChildren(
-    build('div', { className: 'head' }, [
-      build('a', { className: 'home', href: 'index.html', textContent: 'Reset a Mac' }, []),
-      build('span', { className: 'count', textContent: `${count} of ${STEPS.length} done` }, []),
-    ]),
-    meter,
-    build('nav', { ariaLabel: 'Reset pages' }, [
-      ...GROUPS.flatMap(([name, pages]) => [
-        build('h2', { textContent: name }, []),
-        build('ol', {}, pages.map(item)),
-      ]),
-    ]),
-  );
-}
-
-function renderCards(root) {
-  const card = ({ file, title, step, about }) => {
-    const link = build('a', { href: file }, [
-      build('span', { className: 'dot', textContent: done.has(file) ? '✓' : step ?? '·' }, []),
-      build('span', {}, [build('strong', { textContent: title }, []), build('span', { className: 'd', textContent: about }, [])]),
-      build('span', { className: 'go', textContent: '→' }, []),
-    ]);
-    link.classList.toggle('is-done', done.has(file));
-    return build('li', {}, [link]);
-  };
-  const next = nextStep();
-  const banner = next
-    ? build('div', { className: 'continue' }, [
-      build('p', {}, [build('small', { textContent: doneCount() ? `${doneCount()} of ${STEPS.length} done. Next up:` : 'Start here:' }, []), build('strong', { textContent: `Step ${next.step}: ${next.title}` }, [])]),
-      build('a', { className: 'btn', href: next.file, textContent: doneCount() ? 'Continue →' : 'Start →' }, []),
-    ])
-    : build('div', { className: 'continue' }, [
-      build('p', {}, [build('small', { textContent: `All ${STEPS.length} steps done.` }, []), build('strong', { textContent: 'This Mac is set up.' }, [])]),
-      build('button', { className: 'btn', type: 'button', textContent: 'Clear marks', onclick: () => { done.clear(); save(); location.reload(); } }, []),
-    ]);
-  root.replaceChildren(banner, ...GROUPS.flatMap(([name, pages]) => [
-    build('h2', { className: 'group', textContent: name }, []),
-    build('ul', { className: 'cards' }, pages.map(card)),
-  ]));
-}
-
-// Step pages end with a bar: tick it when the step worked, then go to the next one.
-function renderFinish(main) {
-  const page = PAGES.find(p => p.file === here);
-  if (!page?.step) return;
-  const next = STEPS.find(p => p.step === page.step + 1);
-  const box = build('input', { type: 'checkbox', checked: done.has(here) }, []);
-  const bar = build('div', { className: 'finish' }, [
-    build('label', {}, [box, `Step ${page.step} worked on this Mac`]),
-    build('span', { className: 'spacer' }, []),
-    next
-      ? build('a', { className: 'btn primary', href: next.file, textContent: `Next: ${next.label} →` }, [])
-      : build('a', { className: 'btn primary', href: 'index.html', textContent: 'Back to all steps' }, []),
-  ]);
-  const sync = () => bar.classList.toggle('is-done', box.checked);
-  box.addEventListener('change', () => {
-    if (box.checked) done.add(here); else done.delete(here);
-    save(); sync();
-    for (const rail of document.querySelectorAll('.rail')) renderRail(rail);
-  });
-  sync();
-  const footer = main.querySelector('footer');
-  if (footer) footer.before(bar); else main.append(bar);
 }
 
 // Copy rebuilds the text from the lines, so the line numbers and "$" prompts never come along.
@@ -149,17 +38,17 @@ function highlight(code) {
   });
 }
 
-// A block with data-src holds the runner lines; insert the script before its closing marker.
-// data-script-end marks the Python closer when an outer shell heredoc follows it.
-async function load(code) {
-  const response = await fetch(code.dataset.src, { cache: 'no-store' });
-  if (!response.ok) throw new Error(`${code.dataset.src}: ${response.status}`);
-  // Val Town may prepend a source-link comment before a script's shebang.
-  // A heredoc already selects its interpreter, so omit shebang lines anywhere
-  // in the fetched source, including after that hosting preamble.
-  const lines = (await response.text()).replace(/^\uFEFF?#![^\n]*(?:\n|$)/gm, '').replace(/\n$/, '').split('\n');
-  const end = code.querySelector('[data-script-end]') || code.lastElementChild;
-  end.before(...lines.map(line => build('span', { className: 'l', textContent: line }, [])));
+// A block with data-src holds the runner lines; the script goes before its closing line (the last `.h` line, or
+// data-script-end), or makes up the whole block when it has no runner. The files live in Resources/Scripts;
+// ArfanReset1 expands their `# @include` lines and hands them over as window.RESET1_SCRIPTS, because a
+// file:// page cannot fetch them.
+function load(code) {
+  const source = (window.RESET1_SCRIPTS || {})[code.dataset.src];
+  const lines = (source ?? `# ${code.dataset.src} is missing from the app's Scripts folder.`).split('\n');
+  const runner = code.querySelectorAll('.l.h');
+  const end = code.querySelector('[data-script-end]') || (runner.length > 1 ? runner[runner.length - 1] : null);
+  const spans = lines.map(line => build('span', { className: 'l', textContent: line }, []));
+  if (end) end.before(...spans); else code.append(...spans);
   const meta = code.closest('.panel')?.querySelector('.bar .meta');
   if (meta) meta.textContent = `${code.querySelectorAll('.l').length} lines`;
 }
@@ -179,10 +68,7 @@ function fold(pre) {
   set(true);
 }
 
-for (const rail of document.querySelectorAll('.rail')) renderRail(rail);
-for (const root of document.querySelectorAll('[data-cards]')) renderCards(root);
-renderFinish(document.querySelector('main'));
-
+for (const code of document.querySelectorAll('code[data-src]')) load(code);
 if (window.hljs) for (const code of document.querySelectorAll('code[data-lang]')) highlight(code);
 for (const pre of document.querySelectorAll('pre.tall')) fold(pre);
 

@@ -661,26 +661,6 @@
     "section": "defaults"
   },
   {
-    "group": "Dwell",
-    "domain": "com.apple.universalaccess",
-    "key": "dwellTimeDefaultAction",
-    "type": "float",
-    "value": "0.25",
-    "description": "Perform the default dwell action after 0.25 seconds",
-    "id": "default-66",
-    "section": "defaults"
-  },
-  {
-    "group": "Dwell",
-    "domain": "com.apple.universalaccess",
-    "key": "virtualKeyboardCornerActionType",
-    "type": "intDict",
-    "value": "{\"0\":0,\"1\":1,\"2\":0,\"3\":0}",
-    "description": "Only the bottom-right dwell corner hides or shows the Home Panel",
-    "id": "default-67",
-    "section": "defaults"
-  },
-  {
     "group": "System maintenance",
     "domain": "com.apple.SoftwareUpdate",
     "key": "AutomaticCheckEnabled",
@@ -738,46 +718,6 @@
     "value": "none",
     "description": "No crash reporter dialog when an app quits",
     "id": "default-73",
-    "section": "defaults"
-  },
-  {
-    "group": "Zoom",
-    "domain": "com.apple.universalaccess",
-    "key": "closeViewHotkeysEnabled",
-    "type": "bool",
-    "value": "true",
-    "description": "Zoom keyboard shortcuts on",
-    "id": "default-74",
-    "section": "defaults"
-  },
-  {
-    "group": "Zoom",
-    "domain": "com.apple.universalaccess",
-    "key": "closeViewScrollWheelToggle",
-    "type": "bool",
-    "value": "true",
-    "description": "Scroll with a modifier key to zoom",
-    "id": "default-75",
-    "section": "defaults"
-  },
-  {
-    "group": "Zoom",
-    "domain": "com.apple.universalaccess",
-    "key": "closeViewZoomMode",
-    "type": "int",
-    "value": "3",
-    "description": "Zoom follows the pointer in a picture-in-picture window",
-    "id": "default-76",
-    "section": "defaults"
-  },
-  {
-    "group": "Zoom",
-    "domain": "com.apple.universalaccess",
-    "key": "closeViewScrollWheelModifiersInt",
-    "type": "int",
-    "value": "4",
-    "description": "Control is the zoom modifier",
-    "id": "default-77",
     "section": "defaults"
   },
   {
@@ -849,7 +789,7 @@
   {
     "id": "gesture-84",
     "section": "gestures",
-    "group": "Accessibility",
+    "group": "Zoom",
     "domain": "com.apple.universalaccess",
     "key": "closeViewTrackpadGestureZoomEnabled",
     "type": "bool",
@@ -857,13 +797,73 @@
     "description": "Use trackpad gesture to zoom"
   },
   {
+    "group": "Zoom",
+    "domain": "com.apple.universalaccess",
+    "key": "closeViewHotkeysEnabled",
+    "type": "bool",
+    "value": "true",
+    "description": "Zoom keyboard shortcuts on",
+    "id": "default-74",
+    "section": "gestures"
+  },
+  {
+    "group": "Zoom",
+    "domain": "com.apple.universalaccess",
+    "key": "closeViewScrollWheelToggle",
+    "type": "bool",
+    "value": "true",
+    "description": "Scroll with a modifier key to zoom",
+    "id": "default-75",
+    "section": "gestures"
+  },
+  {
+    "group": "Zoom",
+    "domain": "com.apple.universalaccess",
+    "key": "closeViewZoomMode",
+    "type": "int",
+    "value": "3",
+    "description": "Zoom follows the pointer in a picture-in-picture window",
+    "id": "default-76",
+    "section": "gestures"
+  },
+  {
+    "group": "Zoom",
+    "domain": "com.apple.universalaccess",
+    "key": "closeViewScrollWheelModifiersInt",
+    "type": "int",
+    "value": "4",
+    "description": "Control is the zoom modifier",
+    "id": "default-77",
+    "section": "gestures"
+  },
+  {
     "id": "gesture-85",
     "section": "gestures",
-    "group": "Accessibility",
+    "group": "Accessibility Keyboard",
     "domain": "com.apple.universalaccess",
     "key": "virtualKeyboardOnOff",
     "type": "bool",
     "value": "true",
     "description": "Turn on Accessibility Keyboard"
+  },
+  {
+    "group": "Accessibility Keyboard",
+    "domain": "com.apple.universalaccess",
+    "key": "dwellTimeDefaultAction",
+    "type": "float",
+    "value": "0.25",
+    "description": "Perform the default dwell action after 0.25 seconds",
+    "id": "default-66",
+    "section": "gestures"
+  },
+  {
+    "group": "Accessibility Keyboard",
+    "domain": "com.apple.universalaccess",
+    "key": "virtualKeyboardCornerActionType",
+    "type": "intDict",
+    "value": "{\"0\":0,\"1\":1,\"2\":0,\"3\":0}",
+    "description": "Only the bottom-right dwell corner hides or shows the Home Panel",
+    "id": "default-67",
+    "section": "gestures"
   }
 ]

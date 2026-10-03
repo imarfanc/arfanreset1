@@ -33,6 +33,8 @@ tiff2icns build/icon-tiff/ArfanReset1.tiff "$app/Contents/Resources/ArfanReset1.
 cp Resources/ArfanReset1.png "$app/Contents/Resources/ArfanReset1.png"
 ditto Resources/Web "$app/Contents/Resources/Web"
 ditto Resources/Config "$app/Contents/Resources/Config"
+ditto Resources/Scripts "$app/Contents/Resources/Scripts"
+ditto Resources/Functions "$app/Contents/Resources/Functions"
 codesign --force --deep --sign - "$app"
 plutil -lint "$app/Contents/Info.plist"
 codesign --verify --deep --strict "$app"
